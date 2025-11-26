@@ -38,7 +38,7 @@
         .bg-cream { background-color: var(--color-cream); }
         .text-tan { color: var(--color-tan); }
 
-        /* HEADER: High Contrast for Readability */
+        /* HEADER: High Contrast for Readability & Mobile Adjustment */
         .aesthetic-header {
             /* Gambar yang Anda berikan */
             background-image: url('https://raw.githubusercontent.com/FirzaF/Testing-Gambar/main/Kopi_Lakujoo_Counter.jpg'); 
@@ -47,7 +47,7 @@
             background-attachment: fixed;
         }
         .header-overlay {
-            /* KUNCI KONTRAS: Opacity ditingkatkan ke 0.75-0.80 agar teks putih terbaca jelas */
+            /* KUNCI KONTRAS: Opacity tinggi agar teks putih terbaca jelas */
             background-image: url('https://www.transparenttextures.com/patterns/dark-noise.png');
             background-color: rgba(31, 41, 55, 0.85); /* Menggunakan warna primary dark (charcoal) dengan opasitas tinggi */
         }
@@ -74,105 +74,106 @@
 <body class="bg-cream">
 
     
-<!-- HEADER: Perbaikan Kontras dan Font -->
+<!-- HEADER: Perbaikan Kontras dan Font Size Responsive -->
 <header class="aesthetic-header text-white min-h-screen flex items-center relative overflow-hidden">
-        
-        <!-- header-overlay kini lebih gelap untuk kontras teks yang lebih baik -->
         <div class="header-overlay absolute inset-0"></div>
         <div class="container mx-auto px-6 relative z-10 text-center py-20">
             
-            <img src="https://i.ibb.co/L50n11f/lakujoo-logo-trans.png" onerror="this.src='https://placehold.co/160x160/1F2937/37B9CC?text=LAKUJOO'" alt="Kopi Lakujoo Logo" class="mx-auto h-24 sm:h-32 md:h-40 mb-6 object-contain">
+            <img src="https://i.ibb.co/L50n11f/lakujoo-logo-trans.png" onerror="this.src='https://placehold.co/160x160/1F2937/37B9CC?text=LAKUJOO'" alt="Kopi Lakujoo Logo" class="mx-auto h-20 sm:h-28 md:h-40 mb-6 object-contain">
             
-            <!-- Judul menggunakan Font Lora -->
-            <h1 class="text-5xl md:text-8xl font-bold mb-4 text-accent-main drop-shadow-lg">Kopi Lakujoo</h1>
-            <p class="text-xl md:text-3xl font-light mb-8 text-gray-100">by Kopi Adem 86</p>
+            <!-- Font H1 disesuaikan agar tidak terlalu besar di mobile -->
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 text-accent-main drop-shadow-lg">Kopi Lakujoo</h1>
+            <p class="text-lg sm:text-xl md:text-3xl font-light mb-8 text-gray-100">by Kopi Adem 86</p>
 
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto font-medium">Bisnis Kopi Keliling Modern dengan Sistem Franchise Terintegrasi. Mudah, Menguntungkan, dan Terukur.</p>
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto font-medium">Bisnis Kopi Keliling Modern dengan Sistem Franchise Terintegrasi. Mudah, Menguntungkan, dan Terukur.</p>
             
-            <div class="flex justify-center gap-6">
-                <a href="#paket" class="bg-accent-main text-primary-dark px-10 py-4 rounded-full font-extrabold hover:bg-cyan-500 transition duration-300 shadow-xl">Lihat Paket Kemitraan</a>
-                <a href="#teknologi" class="border-2 border-accent-main text-accent-main px-10 py-4 rounded-full font-extrabold hover:bg-accent-main hover:text-primary-dark transition duration-300 shadow-xl">Lihat Keunggulan Teknologi</a>
+            <!-- Tombol akan menumpuk di bawah ukuran 'sm' jika lebar tidak cukup -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                <a href="#paket" class="bg-accent-main text-primary-dark px-8 py-3 rounded-full font-extrabold hover:bg-cyan-500 transition duration-300 shadow-xl w-full sm:w-auto">Lihat Paket Kemitraan</a>
+                <a href="#teknologi" class="border-2 border-accent-main text-accent-main px-8 py-3 rounded-full font-extrabold hover:bg-accent-main hover:text-primary-dark transition duration-300 shadow-xl w-full sm:w-auto mt-3 sm:mt-0">Lihat Keunggulan Teknologi</a>
             </div>
         </div>
     </header>
 
     
-<!-- KENAPA MEMILIH LAKUJOO -->
-<section class="py-24 px-6 section-light">
+<!-- KENAPA MEMILIH LAKUJOO: Grid default 1 kolom (sudah benar) -->
+<section class="py-16 sm:py-24 px-6 section-light">
         <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-primary-dark mb-4">Kenapa Memilih Lakujoo?</h2>
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Kenapa Memilih Lakujoo?</h2>
                 <div class="w-24 h-1 bg-accent-main mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-10">
+            <div class="grid md:grid-cols-3 gap-8 sm:gap-10">
                 
-                <div class="text-center p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
-                    <div class="w-16 h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-truck-loading text-accent-main text-2xl"></i>
+                <div class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-truck-loading text-accent-main text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Suplai Terjamin</h3>
-                    <p class="text-gray-600">Bahan baku utama disiapkan dari pusat (Jakarta Timur). Franchisee di luar kota tinggal mencampur (mix) bahan jadi. Praktis dan berkualitas.</p>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Suplai Terjamin</h3>
+                    <p class="text-gray-600 text-sm">Bahan baku utama disiapkan dari pusat (Jakarta Timur). Franchisee di luar kota tinggal mencampur (mix) bahan jadi. Praktis dan berkualitas.</p>
                 </div>
                 
-                <div class="text-center p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
-                    <div class="w-16 h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-coins text-accent-main text-2xl"></i>
+                <div class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-coins text-accent-main text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Margin Tinggi</h3>
-                    <p class="text-gray-600">Nikmati margin keuntungan produk Kopi hingga 50% dan Milk Series hingga 60%. Model bisnis didesain untuk mencapai BEP cepat.</p>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Margin Tinggi</h3>
+                    <p class="text-gray-600 text-sm">Nikmati margin keuntungan produk Kopi hingga 50% dan Milk Series hingga 60%. Model bisnis didesain untuk mencapai BEP cepat.</p>
                 </div>
                 
-                <div class="text-center p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
-                    <div class="w-16 h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-motorcycle text-accent-main text-2xl"></i>
+                <div class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white hover:shadow-2xl hover:-translate-y-1 transition duration-300 hover-tan">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-motorcycle text-accent-main text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Sistem Rider Efektif</h3>
-                    <p class="text-gray-600">Konsep jemput bola dengan armada rider. Memperluas jangkauan pasar tanpa biaya sewa tempat/ruko yang mahal.</p>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Sistem Rider Efektif</h3>
+                    <p class="text-gray-600 text-sm">Konsep jemput bola dengan armada rider. Memperluas jangkauan pasar tanpa biaya sewa tempat/ruko yang mahal.</p>
                 </div>
             </div>
         </div>
     </section>
 
     
-<!-- MENU ANDALAN (Aesthetic coffee picture) -->
-<section class="py-24 bg-gray-100">
+<!-- MENU ANDALAN: Responsive Image/Text Split -->
+<section class="py-16 sm:py-24 bg-gray-100">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2">
+            <!-- Gap antar elemen disesuaikan agar tidak terlalu renggang di mobile -->
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="md:w-1/2 w-full">
                     
-                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" onerror="this.src='https://placehold.co/1000x800/A78C7E/1F2937?text=Kopi+Lakujoo+Signature'" alt="Kopi Lakujoo Signature Menu" class="rounded-xl shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" onerror="this.src='https://placehold.co/1000x800/A78C7E/1F2937?text=Kopi+Lakujoo+Signature'" alt="Kopi Lakujoo Signature Menu" class="rounded-xl shadow-2xl border-4 border-white w-full h-auto">
                 </div>
-                <div class="md:w-1/2">
-                    <span class="text-accent-main font-bold tracking-wider uppercase mb-2 block">Menu Andalan Kami</span>
-                    <h2 class="text-4xl font-bold text-primary-dark mb-8">Produk Premium, Rasa Konsisten</h2>
-                    <p class="text-gray-700 mb-8 leading-relaxed">Kami menggunakan bahan baku premium dan menjaga konsistensi rasa di setiap cabang. Kewajiban pembelian bahan dari pusat adalah jaminan kualitas otentik Kopi Lakujoo.</p>
+                <div class="md:w-1/2 w-full mt-6 md:mt-0">
+                    <span class="text-accent-main font-bold tracking-wider uppercase mb-2 block text-sm">Menu Andalan Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-6 sm:mb-8">Produk Premium, Rasa Konsisten</h2>
+                    <p class="text-gray-700 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">Kami menggunakan bahan baku premium dan menjaga konsistensi rasa di setiap cabang. Kewajiban pembelian bahan dari pusat adalah jaminan kualitas otentik Kopi Lakujoo.</p>
                     
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3">
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
                             <div>
-                                <h4 class="font-bold text-lg text-primary-dark">Kopi Joo Original (Signature)</h4>
-                                <span class="text-sm text-gray-500">Kopi Susu Gula Aren khas Lakujoo.</span>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Kopi Joo Original (Signature)</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Kopi Susu Gula Aren khas Lakujoo.</span>
                             </div>
                             <div class="text-right">
-                                <span class="block font-bold text-lg text-tan">Rp 8.000</span>
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 8.000</span>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3">
+                        <!-- Items lainnya memiliki struktur yang sama dan sudah responsif -->
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
                             <div>
-                                <h4 class="font-bold text-lg text-primary-dark">Kopi + Syrup Varian</h4>
-                                <span class="text-sm text-gray-500">Pilihan rasa unik dengan syrup premium (Hazelnut, Vanilla, dll).</span>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Kopi + Syrup Varian</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Pilihan rasa unik dengan syrup premium (Hazelnut, Vanilla, dll).</span>
                             </div>
                             <div class="text-right">
-                                <span class="block font-bold text-lg text-tan">Rp 10.000</span>
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 10.000</span>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3">
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
                             <div>
-                                <h4 class="font-bold text-lg text-primary-dark">Milk Series Non-Kopi</h4>
-                                <span class="text-sm text-gray-500">Pilihan minuman creamy tanpa kopi yang populer (Red Velvet, Taro, dll).</span>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Milk Series Non-Kopi</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Pilihan minuman creamy tanpa kopi yang populer (Red Velvet, Taro, dll).</span>
                             </div>
                             <div class="text-right">
-                                <span class="block font-bold text-lg text-tan">Rp 12.000</span>
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 12.000</span>
                             </div>
                         </div>
                     </div>
@@ -182,67 +183,68 @@
     </section>
 
     
-<!-- TEKNOLOGI EKSKLUSIF LAKUJOO (Dark Section with High Contrast) -->
-<section id="teknologi" class="py-24 px-6 section-dark">
+<!-- TEKNOLOGI EKSKLUSIF LAKUJOO: Grid defaults to 1 col, transitions to 4 on desktop -->
+<section id="teknologi" class="py-16 sm:py-24 px-6 section-dark">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-accent-main mb-4">Teknologi Eksklusif Lakujoo</h2>
-                <p class="text-gray-300 max-w-4xl mx-auto text-lg">Kelola bisnis Anda dengan mudah menggunakan aplikasi manajemen terintegrasi. Transparan, terukur, dan memfasilitasi pertumbuhan.</p>
-                <div class="w-24 h-1 bg-accent-main mx-auto mt-6"></div>
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-accent-main mb-4">Teknologi Eksklusif Lakujoo</h2>
+                <p class="text-gray-300 max-w-4xl mx-auto text-sm sm:text-lg">Kelola bisnis Anda dengan mudah menggunakan aplikasi manajemen terintegrasi. Transparan, terukur, dan memfasilitasi pertumbuhan.</p>
+                <div class="w-24 h-1 bg-accent-main mx-auto mt-4 sm:mt-6"></div>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
                 
-                <div class="bg-[#28384b] p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
-                    <i class="fas fa-chart-line text-accent-main text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 text-white">Laporan & Analitik Penjualan</h3>
-                    <p class="text-gray-400 text-sm">Monitor penjualan harian, bulanan, dan per cup secara *real-time*. Analisis performa produk di ujung jari Anda.</p>
+                <div class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-chart-line text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Laporan & Analitik Penjualan</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Monitor penjualan harian, bulanan, dan per cup secara *real-time*. Analisis performa produk di ujung jari Anda.</p>
                 </div>
                 
-                <div class="bg-[#28384b] p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
-                    <i class="fas fa-map-pin text-accent-main text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 text-white">Pinpoint Lokasi Rider</h3>
-                    <p class="text-gray-400 text-sm">Lacak posisi GPS setiap rider. Pastikan area operasional tercakup optimal dan tidak ada *overlap*.</p>
+                <div class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-map-pin text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Pinpoint Lokasi Rider</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Lacak posisi GPS setiap rider. Pastikan area operasional tercakup optimal dan tidak ada *overlap*.</p>
                 </div>
                 
-                <div class="bg-[#28384b] p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
-                    <i class="fas fa-medal text-accent-main text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 text-white">Leaderboard Rider</h3>
-                    <p class="text-gray-400 text-sm">Lacak dan berikan *reward* pada rider terbaik. Mendorong kompetisi sehat dan meningkatkan motivasi tim.</p>
+                <div class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-medal text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Leaderboard Rider</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Lacak dan berikan *reward* pada rider terbaik. Mendorong kompetisi sehat dan meningkatkan motivasi tim.</p>
                 </div>
                  
-                <div class="bg-[#28384b] p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
-                    <i class="fas fa-warehouse text-accent-main text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 text-white">Manajemen Stok Gudang</h3>
-                    <p class="text-gray-400 text-sm">Fitur *stocking* gudang yang terintegrasi. Kontrol inventaris dan meminimalisir *waste* bahan baku.</p>
+                <div class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-warehouse text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Manajemen Stok Gudang</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Fitur *stocking* gudang yang terintegrasi. Kontrol inventaris dan meminimalisir *waste* bahan baku.</p>
                 </div>
             </div>
         </div>
     </section>
 
     
-<!-- PILIHAN PAKET KEMITRAAN (Highlighting the best package) -->
-<section id="paket" class="py-24 px-6 section-light">
+<!-- PILIHAN PAKET KEMITRAAN: Grid columns responsive. Paling besar (Paket 4 Rider) tetap menonjol. -->
+<section id="paket" class="py-16 sm:py-24 px-6 section-light">
         <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-primary-dark mb-4">Pilihan Paket Kemitraan</h2>
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Pilihan Paket Kemitraan</h2>
                 <div class="w-24 h-1 bg-accent-main mx-auto mt-4"></div>
-                <p class="text-gray-600 text-lg">Pilih skala bisnis yang sesuai. Kami menyediakan aset terbaik untuk kesuksesan operasional Anda.</p>
+                <p class="text-gray-600 text-sm sm:text-lg">Pilih skala bisnis yang sesuai. Kami menyediakan aset terbaik untuk kesuksesan operasional Anda.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10 items-end">
+            <!-- Menggunakan grid default 1 kolom, menjadi 3 kolom di desktop -->
+            <div class="grid md:grid-cols-3 gap-8 sm:gap-10 items-end">
                 
                 <!-- Paket 2 Rider -->
                 <div class="bg-white text-gray-800 rounded-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 card-shadow border border-gray-200">
-                    <div class="bg-gray-100 p-6 text-center">
-                        <h3 class="text-2xl font-bold text-primary-dark">Paket 2 Rider</h3>
-                        <p class="text-sm text-gray-500 mt-2">Starter Pack (Fokus Area Lokal)</p>
+                    <div class="bg-gray-100 p-5 sm:p-6 text-center">
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-dark">Paket 2 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2">Starter Pack (Fokus Area Lokal)</p>
                     </div>
-                    <div class="p-8">
+                    <div class="p-6 sm:p-8">
                         <div class="text-center mb-6">
-                            <span class="text-5xl font-bold text-accent-main">Rp 50 Juta</span>
+                            <span class="text-4xl sm:text-5xl font-bold text-accent-main">Rp 50 Juta</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-base text-left">
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
                             <li class="flex items-start"><i class="fas fa-motorcycle text-tan mr-3 mt-1"></i> **2 Unit Sepeda Listrik Custom**</li>
                             <li class="flex items-start"><i class="fas fa-tablet-alt text-tan mr-3 mt-1"></i> Aplikasi BK-POS (Manajemen Dasar)</li>
                             <li class="flex items-start"><i class="fas fa-book-open text-tan mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
@@ -251,23 +253,24 @@
                             <li class="flex items-start text-gray-500 line-through"><i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i> Showcase / Chiller</li>
                             <li class="flex items-start text-gray-500 line-through"><i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i> Freezer Penyimpanan</li>
                         </ul>
-                        <a href="#" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md">Pilih Paket</a>
+                        <a href="#" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md text-sm sm:text-base">Pilih Paket</a>
                     </div>
                 </div>
 
                 
                 <!-- Paket 4 Rider (Paling Cepat BEP) -->
-                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden transform scale-105 shadow-2xl relative border-4 border-accent-main z-10">
+                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden transform scale-[1.05] md:scale-105 shadow-2xl relative border-4 border-accent-main z-10">
                     <div class="absolute top-0 right-0 bg-accent-main text-white text-xs font-bold px-4 py-1 uppercase rounded-bl-xl">Pilihan Terbaik!</div>
-                    <div class="bg-primary-dark p-6 text-center text-white">
-                        <h3 class="text-2xl font-bold text-accent-main">Paket 4 Rider</h3>
-                        <p class="text-sm text-gray-300 mt-2">Paling Cepat BEP & Ekspansi</p>
+                    <div class="bg-primary-dark p-5 sm:p-6 text-center text-white">
+                        <h3 class="text-xl sm:text-2xl font-bold text-accent-main">Paket 4 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">Paling Cepat BEP & Ekspansi</p>
                     </div>
-                    <div class="p-8">
+                    <div class="p-6 sm:p-8">
                         <div class="text-center mb-6">
-                            <span class="text-6xl font-extrabold text-accent-main">Rp 90 Juta</span>
+                            <!-- Ukuran font harga diubah agar tidak terlalu besar di mobile -->
+                            <span class="text-5xl sm:text-6xl font-extrabold text-accent-main">Rp 90 Juta</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-base text-left">
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
                             <li class="flex items-start"><i class="fas fa-motorcycle text-green-600 mr-3 mt-1"></i> **4 Unit Sepeda Listrik Custom**</li>
                             <li class="flex items-start"><i class="fas fa-tablet-alt text-green-600 mr-3 mt-1"></i> Aplikasi BK-POS (Manajemen Penuh)</li>
                             <li class="flex items-start"><i class="fas fa-book-open text-green-600 mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
@@ -276,22 +279,22 @@
                             <li class="flex items-start"><i class="fas fa-cubes text-green-600 mr-3 mt-1"></i> Bonus 900 Cup Stok Awal</li>
                             <li class="flex items-start text-gray-500 line-through"><i class="fas fa-times-circle text-red-500 mr-3 mt-1"></i> Freezer Penyimpanan</li>
                         </ul>
-                        <a href="#" class="block w-full py-4 bg-accent-main text-primary-dark text-center rounded-lg font-extrabold hover:bg-cyan-500 shadow-xl">Pilih Paket Favorit</a>
+                        <a href="#" class="block w-full py-4 bg-accent-main text-primary-dark text-center rounded-lg font-extrabold hover:bg-cyan-500 shadow-xl text-sm sm:text-base">Pilih Paket Favorit</a>
                     </div>
                 </div>
 
                 
                 <!-- Paket 8 Rider -->
                 <div class="bg-white text-gray-800 rounded-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 card-shadow border border-gray-200">
-                    <div class="bg-gray-100 p-6 text-center">
-                        <h3 class="text-2xl font-bold text-primary-dark">Paket 8 Rider</h3>
-                        <p class="text-sm text-gray-500 mt-2">Enterprise Pack (Aset Penuh)</p>
+                    <div class="bg-gray-100 p-5 sm:p-6 text-center">
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-dark">Paket 8 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2">Enterprise Pack (Aset Penuh)</p>
                     </div>
-                    <div class="p-8">
+                    <div class="p-6 sm:p-8">
                         <div class="text-center mb-6">
-                            <span class="text-5xl font-bold text-accent-main">Rp 170 Juta</span>
+                            <span class="text-4xl sm:text-5xl font-bold text-accent-main">Rp 170 Juta</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-base text-left">
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
                             <li class="flex items-start"><i class="fas fa-motorcycle text-tan mr-3 mt-1"></i> **8 Unit Sepeda Listrik Custom**</li>
                             <li class="flex items-start"><i class="fas fa-tablet-alt text-tan mr-3 mt-1"></i> Aplikasi BK-POS Lanjutan</li>
                             <li class="flex items-start"><i class="fas fa-book-open text-tan mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
@@ -300,7 +303,7 @@
                             <li class="flex items-start"><i class="fas fa-temperature-low text-tan mr-3 mt-1"></i> **Freezer Penyimpanan 120L**</li>
                             <li class="flex items-start"><i class="fas fa-cubes text-tan mr-3 mt-1"></i> Bonus 1.800 Cup Stok Awal</li>
                         </ul>
-                        <a href="#" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md">Pilih Paket</a>
+                        <a href="#" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md text-sm sm:text-base">Pilih Paket</a>
                     </div>
                 </div>
             </div>
@@ -308,65 +311,66 @@
     </section>
 
     
-<!-- DUKUNGAN SUPPLY CHAIN (Dark Section) -->
-<section id="reorder" class="py-24 section-dark relative">
+<!-- DUKUNGAN SUPPLY CHAIN: Responsive Image/Text Split -->
+<section id="reorder" class="py-16 sm:py-24 section-dark relative">
         <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-16">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-bold mb-6 text-accent-main">Dukungan Supply Chain Premium</h2>
-                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+            <!-- Gap antar elemen disesuaikan agar tidak terlalu renggang di mobile -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+                <div class="md:w-1/2 w-full">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-accent-main">Dukungan Supply Chain Premium</h2>
+                    <p class="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-lg">
                         Kami menjamin kemudahan operasional dan konsistensi rasa. Bahan baku dikirim langsung dari Pusat (Jakarta Timur) dengan skema yang disesuaikan lokasi untuk menjaga kualitas terbaik.
                     </p>
-                    <ul class="space-y-6 mb-8">
+                    <ul class="space-y-4 sm:space-y-6 mb-8">
                         <li class="flex items-start">
-                            <i class="fas fa-award text-accent-main mt-1 mr-4 text-xl"></i>
+                            <i class="fas fa-award text-accent-main mt-1 mr-4 text-lg sm:text-xl"></i>
                             <div>
-                                <h4 class="font-bold text-xl text-white">Standar Kualitas Tertinggi</h4>
-                                <p class="text-sm text-gray-400">Semua bahan baku telah terstandarisasi. Mitra cukup mencampur, tidak perlu meracik dari awal.</p>
+                                <h4 class="font-bold text-base sm:text-xl text-white">Standar Kualitas Tertinggi</h4>
+                                <p class="text-xs sm:text-sm text-gray-400">Semua bahan baku telah terstandarisasi. Mitra cukup mencampur, tidak perlu meracik dari awal.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-shipping-fast text-accent-main mt-1 mr-4 text-xl"></i>
+                            <i class="fas fa-shipping-fast text-accent-main mt-1 mr-4 text-lg sm:text-xl"></i>
                             <div>
-                                <h4 class="font-bold text-xl text-white">Logistik Efisien</h4>
-                                <p class="text-sm text-gray-400">Skema pengiriman disesuaikan dengan lokasi untuk menjamin kesegaran dan umur simpan produk.</p>
+                                <h4 class="font-bold text-base sm:text-xl text-white">Logistik Efisien</h4>
+                                <p class="text-xs sm:text-sm text-gray-400">Skema pengiriman disesuaikan dengan lokasi untuk menjamin kesegaran dan umur simpan produk.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="md:w-1/2 w-full">
-                    <div class="bg-cream text-gray-900 p-8 rounded-xl shadow-2xl relative overflow-hidden">
+                <div class="md:w-1/2 w-full mt-6 md:mt-0">
+                    <div class="bg-cream text-gray-900 p-6 sm:p-8 rounded-xl shadow-2xl relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-3 h-full bg-accent-main rounded-l-xl"></div>
-                        <h3 class="text-2xl font-bold mb-6 text-primary-dark pl-4">Skema Pengiriman Bahan Baku</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary-dark pl-4">Skema Pengiriman Bahan Baku</h3>
                         
                         <div class="space-y-6">
                             
                             <div class="flex items-start">
-                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md">
+                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md text-sm">
                                     <i class="fas fa-map-marked-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg text-primary-dark">Area Jakarta & Depok</h4>
-                                    <p class="text-sm text-gray-600">Dikirim berupa **Bahan Jadi (Liquid)**. Mitra menerima barang dalam kondisi siap tuang/saji.</p>
+                                    <h4 class="font-bold text-base sm:text-lg text-primary-dark">Area Jakarta & Depok</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">Dikirim berupa **Bahan Jadi (Liquid)**. Mitra menerima barang dalam kondisi siap tuang/saji.</p>
                                 </div>
                             </div>
 
                             
                             <div class="flex items-start">
-                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md">
+                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md text-sm">
                                     <i class="fas fa-box-open"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg text-primary-dark">Luar Kota (Jauh)</h4>
-                                    <p class="text-sm text-gray-600">Dikirim berupa **Bahan Racikan (Konsentrat)** terpisah (dry/powder) untuk menjaga keawetan. Mitra mencampur sendiri di lokasi.</p>
+                                    <h4 class="font-bold text-base sm:text-lg text-primary-dark">Luar Kota (Jauh)</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">Dikirim berupa **Bahan Racikan (Konsentrat)** terpisah (dry/powder) untuk menjaga keawetan. Mitra mencampur sendiri di lokasi.</p>
                                 </div>
                             </div>
 
-                            <div class="mt-8 pt-4 border-t border-gray-200">
+                            <div class="mt-6 sm:mt-8 pt-4 border-t border-gray-200">
                                 <p class="text-xs text-gray-500 mb-3 text-center">Unduh detail harga re-order, MOQ, dan katalog lengkap:</p>
-                                <a href="Panduan_Logistik_Reorder_Lakujoo.md" target="_blank" class="flex items-center justify-center w-full py-3 bg-accent-main text-primary-dark rounded-lg font-extrabold hover:bg-cyan-500 transition duration-300 shadow-lg">
-                                    <i class="fas fa-file-alt mr-2"></i> Lihat Panduan Logistik (Markdown)
+                                <a href="katalog-reorder-panduan-logistik.pdf" download class="flex items-center justify-center w-full py-3 bg-accent-main text-primary-dark rounded-lg font-extrabold hover:bg-cyan-500 transition duration-300 shadow-lg text-sm sm:text-base">
+                                    <i class="fas fa-file-pdf mr-2"></i> Download Panduan Logistik (PDF)
                                 </a>
                             </div>
                         </div>
@@ -377,10 +381,10 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-primary-dark text-white py-12 text-center border-t border-accent-main">
+    <footer class="bg-primary-dark text-white py-8 sm:py-12 text-center border-t border-accent-main">
         
-        <img src="https://i.ibb.co/L50n11f/lakujoo-logo-trans.png" onerror="this.src='https://placehold.co/160x160/1F2937/37B9CC?text=LAKUJOO'" alt="Kopi Lakujoo Logo" class="mx-auto h-16 object-contain mb-4">
-        <p class="text-gray-400 text-sm mb-2">Tertarik bergabung? Hubungi kami untuk informasi lebih lanjut.</p>
+        <img src="https://i.ibb.co/L50n11f/lakujoo-logo-trans.png" onerror="this.src='https://placehold.co/160x160/1F2937/37B9CC?text=LAKUJOO'" alt="Kopi Lakujoo Logo" class="mx-auto h-12 sm:h-16 object-contain mb-3 sm:mb-4">
+        <p class="text-gray-400 text-xs sm:text-sm mb-2">Tertarik bergabung? Hubungi kami untuk informasi lebih lanjut.</p>
         <p class="text-gray-500 text-xs">© 2024 Kopi Lakujoo by Kopi Adem 86. All Rights Reserved.</p>
     </footer>
 
