@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Lakujoo by Kopi Adem 86 - Franchise Kopi Keliling Modern</title>
+    <meta name="description" content="Bisnis Kopi Keliling Modern dengan Sistem Franchise Terintegrasi. Mudah, Menguntungkan, dan Terukur.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-charcoal: #1F2937;
+            --color-cream: #F9F7F3;
+            --color-accent: #37B9CC;
+            --color-tan: #B8860B;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--color-charcoal);
+        }
+        
+        h1, h2, h3, .serif { 
+            font-family: 'Lora', serif; 
+            color: var(--color-charcoal);
+        }
+
+        /* Utility Classes */
+        .bg-primary-dark { background-color: var(--color-charcoal); }
+        .text-primary-dark { color: var(--color-charcoal); }
+        .bg-accent-main { background-color: var(--color-accent); }
+        .text-accent-main { color: var(--color-accent); }
+        .border-accent-main { border-color: var(--color-accent); }
+        .bg-cream { background-color: var(--color-cream); }
+        .text-tan { color: var(--color-tan); }
+
+        /* Navigation */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(31, 41, 55, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .aesthetic-header {
+            background-image: url('https://raw.githubusercontent.com/FirzaF/Testing-Gambar/main/Kopi_Lakujoo_Counter.jpg'); 
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+        }
+        
+        .header-overlay {
+            background-image: url('https://www.transparenttextures.com/patterns/dark-noise.png');
+            background-color: rgba(31, 41, 55, 0.85);
+        }
+
+        /* Sections */
+        .section-light { background-color: var(--color-cream); }
+        .section-dark { 
+            background-color: var(--color-charcoal); 
+            color: var(--color-cream);
+        }
+
+        /* Card */
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Counter Animation */
+        .counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-accent);
+        }
+
+        /* Gallery */
+        .gallery-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+
+        /* Testimonial Slider */
+        .testimonial-slide {
+            display: none;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Calculator */
+        .calculator-result {
+            background: linear-gradient(135deg, var(--color-accent) 0%, #2a9fb8 100%);
+        }
+
+        /* Button Hover Effects */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(55, 185, 204, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-cream">
+
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://customer-assets.emergentagent.com/job_0e3189dc-4b59-475d-85fa-4ea58e11d1b3/artifacts/xqv449ud_LOGO%20LAKUJOO%20PUTIH.jpg" alt="Lakujoo Logo" class="h-12 md:h-16 object-contain">
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-white hover:text-accent-main transition">Beranda</a>
+                <a href="#keunggulan" class="text-white hover:text-accent-main transition">Keunggulan</a>
+                <a href="#galeri" class="text-white hover:text-accent-main transition">Galeri</a>
+                <a href="#paket" class="text-white hover:text-accent-main transition">Paket</a>
+                <a href="#kalkulator" class="text-white hover:text-accent-main transition">Kalkulator</a>
+                <a href="#faq" class="text-white hover:text-accent-main transition">FAQ</a>
+                <a href="#kontak" class="text-white hover:text-accent-main transition">Kontak</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-primary-dark mt-4">
+            <div class="flex flex-col space-y-4 px-6 py-4">
+                <a href="#home" class="text-white hover:text-accent-main transition">Beranda</a>
+                <a href="#keunggulan" class="text-white hover:text-accent-main transition">Keunggulan</a>
+                <a href="#galeri" class="text-white hover:text-accent-main transition">Galeri</a>
+                <a href="#paket" class="text-white hover:text-accent-main transition">Paket</a>
+                <a href="#kalkulator" class="text-white hover:text-accent-main transition">Kalkulator</a>
+                <a href="#faq" class="text-white hover:text-accent-main transition">FAQ</a>
+                <a href="#kontak" class="text-white hover:text-accent-main transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header/Hero Section -->
+    <header id="home" class="aesthetic-header text-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="header-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center py-20">
+            <div data-aos="fade-down" data-aos-duration="1000">
+                <img src="https://customer-assets.emergentagent.com/job_0e3189dc-4b59-475d-85fa-4ea58e11d1b3/artifacts/xqv449ud_LOGO%20LAKUJOO%20PUTIH.jpg" alt="Kopi Lakujoo Logo" class="mx-auto h-24 sm:h-32 md:h-48 mb-6 object-contain">
+            </div>
+            
+            <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 text-accent-main drop-shadow-lg">Kopi Lakujoo</h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-lg sm:text-xl md:text-3xl font-light mb-8 text-gray-100">by Kopi Adem 86</p>
+
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto font-medium">Bisnis Kopi Keliling Modern dengan Sistem Franchise Terintegrasi. Mudah, Menguntungkan, dan Terukur.</p>
+            
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                <a href="#paket" class="bg-accent-main text-primary-dark px-8 py-3 rounded-full font-extrabold hover:bg-cyan-500 transition duration-300 shadow-xl btn-primary">Lihat Paket Kemitraan</a>
+                <a href="https://wa.me/6282199968492?text=Halo%20Lakujoo,%20saya%20tertarik%20untuk%20bergabung%20menjadi%20mitra%20franchise" target="_blank" class="border-2 border-accent-main text-accent-main px-8 py-3 rounded-full font-extrabold hover:bg-accent-main hover:text-primary-dark transition duration-300 shadow-xl btn-primary">
+                    <i class="fab fa-whatsapp mr-2"></i>Hubungi Kami
+                </a>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                <i class="fas fa-chevron-down text-accent-main text-3xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Statistics Counter Section -->
+    <section class="py-16 bg-white border-t-4 border-accent-main">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <div class="counter" data-target="1">0</div>
+                    <p class="text-gray-600 text-lg mt-2">Mitra Aktif</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="counter" data-target="5000">0</div>
+                    <p class="text-gray-600 text-lg mt-2">Cup Terjual</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="counter" data-target="2">0</div>
+                    <p class="text-gray-600 text-lg mt-2">Kota Operasional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenapa Memilih Lakujoo -->
+    <section id="keunggulan" class="py-16 sm:py-24 px-6 section-light">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Kenapa Memilih Lakujoo?</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 sm:gap-10">
+                
+                <div data-aos="fade-up" data-aos-delay="100" class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-truck-loading text-accent-main text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Suplai Terjamin</h3>
+                    <p class="text-gray-600 text-sm">Bahan baku utama disiapkan dari pusat (Jakarta Timur). Franchisee di luar kota tinggal mencampur (mix) bahan jadi. Praktis dan berkualitas.</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200" class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-coins text-accent-main text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Margin Tinggi</h3>
+                    <p class="text-gray-600 text-sm">Nikmati margin keuntungan produk Kopi hingga 50% dan Milk Series hingga 60%. Model bisnis didesain untuk mencapai BEP cepat.</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="300" class="text-center p-6 sm:p-8 border border-gray-200 card-shadow rounded-2xl bg-white">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary-dark rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-motorcycle text-accent-main text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Sistem Rider Efektif</h3>
+                    <p class="text-gray-600 text-sm">Konsep jemput bola dengan armada rider. Memperluas jangkauan pasar tanpa biaya sewa tempat/ruko yang mahal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Andalan -->
+    <section class="py-16 sm:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="md:w-1/2 w-full" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Kopi Lakujoo Signature Menu" class="rounded-xl shadow-2xl border-4 border-white w-full h-auto">
+                </div>
+                <div class="md:w-1/2 w-full mt-6 md:mt-0" data-aos="fade-left">
+                    <span class="text-accent-main font-bold tracking-wider uppercase mb-2 block text-sm">Menu Andalan Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-6 sm:mb-8">Produk Premium, Rasa Konsisten</h2>
+                    <p class="text-gray-700 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">Kami menggunakan bahan baku premium dan menjaga konsistensi rasa di setiap cabang. Kewajiban pembelian bahan dari pusat adalah jaminan kualitas otentik Kopi Lakujoo.</p>
+                    
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
+                            <div>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Kopi Joo Original (Signature)</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Kopi Susu Gula Aren khas Lakujoo.</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 8.000</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
+                            <div>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Kopi + Syrup Varian</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Pilihan rasa unik dengan syrup premium (Hazelnut, Vanilla, dll).</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 10.000</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 sm:pb-3">
+                            <div>
+                                <h4 class="font-bold text-base sm:text-lg text-primary-dark">Milk Series Non-Kopi</h4>
+                                <span class="text-xs sm:text-sm text-gray-500">Pilihan minuman creamy tanpa kopi yang populer (Red Velvet, Taro, dll).</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-base sm:text-lg text-tan">Rp 12.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section id="galeri" class="py-16 sm:py-24 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Galeri Gerobak Lakujoo</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+                <p class="text-gray-600 mt-4">Gerobak custom dengan desain modern dan eye-catching</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100" onclick="openLightbox('https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/uopk9llh_IMG_3215.JPG')">
+                    <img src="https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/uopk9llh_IMG_3215.JPG" alt="Gerobak Lakujoo 1" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox('https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/t3esu5xi_IMG_3220.JPG')">
+                    <img src="https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/t3esu5xi_IMG_3220.JPG" alt="Gerobak Lakujoo 2" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300" onclick="openLightbox('https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/m7mqh9tt_IMG_3225.JPG')">
+                    <img src="https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/m7mqh9tt_IMG_3225.JPG" alt="Gerobak Lakujoo 3" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" onclick="openLightbox('https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/02737hkv_IMG_3230.JPG')">
+                    <img src="https://customer-assets.emergentagent.com/job_web-enhancement-13/artifacts/02737hkv_IMG_3230.JPG" alt="Gerobak Lakujoo 4" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="absolute top-4 right-8 text-white text-4xl cursor-pointer hover:text-accent-main">&times;</span>
+        <img id="lightboxImg" src="" alt="Lightbox Image">
+    </div>
+
+    <!-- Teknologi Eksklusif -->
+    <section id="teknologi" class="py-16 sm:py-24 px-6 section-dark">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-accent-main mb-4">Teknologi Eksklusif Lakujoo</h2>
+                <p class="text-gray-300 max-w-4xl mx-auto text-sm sm:text-lg">Kelola bisnis Anda dengan mudah menggunakan aplikasi manajemen terintegrasi. Transparan, terukur, dan memfasilitasi pertumbuhan.</p>
+                <div class="w-24 h-1 bg-accent-main mx-auto mt-4 sm:mt-6"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+                <div data-aos="flip-left" data-aos-delay="100" class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-chart-line text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Laporan & Analitik Penjualan</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Monitor penjualan harian, bulanan, dan per cup secara real-time. Analisis performa produk di ujung jari Anda.</p>
+                </div>
+                
+                <div data-aos="flip-left" data-aos-delay="200" class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-map-pin text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Pinpoint Lokasi Rider</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Lacak posisi GPS setiap rider. Pastikan area operasional tercakup optimal dan tidak ada overlap.</p>
+                </div>
+                
+                <div data-aos="flip-left" data-aos-delay="300" class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-medal text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Leaderboard Rider</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Lacak dan berikan reward pada rider terbaik. Mendorong kompetisi sehat dan meningkatkan motivasi tim.</p>
+                </div>
+                 
+                <div data-aos="flip-left" data-aos-delay="400" class="bg-[#28384b] p-5 sm:p-6 rounded-xl border border-gray-700 shadow-xl hover:bg-[#34495e] transition duration-300">
+                    <i class="fas fa-warehouse text-accent-main text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 text-white">Manajemen Stok Gudang</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Fitur stocking gudang yang terintegrasi. Kontrol inventaris dan meminimalisir waste bahan baku.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paket Kemitraan -->
+    <section id="paket" class="py-16 sm:py-24 px-6 section-light">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Pilihan Paket Kemitraan</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto mt-4"></div>
+                <p class="text-gray-600 text-sm sm:text-lg">Pilih skala bisnis yang sesuai. Kami menyediakan aset terbaik untuk kesuksesan operasional Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 sm:gap-10 items-end">
+                
+                <!-- Paket 2 Rider -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white text-gray-800 rounded-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 card-shadow border border-gray-200">
+                    <div class="bg-gray-100 p-5 sm:p-6 text-center">
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-dark">Paket 2 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2">Starter Pack (Fokus Area Lokal)</p>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl sm:text-5xl font-bold text-accent-main">Rp 50 Juta</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
+                            <li class="flex items-start"><i class="fas fa-motorcycle text-tan mr-3 mt-1"></i> 2 Unit Sepeda Listrik Custom</li>
+                            <li class="flex items-start"><i class="fas fa-tablet-alt text-tan mr-3 mt-1"></i> Aplikasi BK-POS (Manajemen Dasar)</li>
+                            <li class="flex items-start"><i class="fas fa-book-open text-tan mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
+                            <li class="flex items-start"><i class="fas fa-user-shield text-tan mr-3 mt-1"></i> Lisensi Franchise (1 Tahun)</li>
+                            <li class="flex items-start"><i class="fas fa-cubes text-tan mr-3 mt-1"></i> Bonus 450 Cup Stok Awal</li>
+                        </ul>
+                        <a href="https://wa.me/6282199968492?text=Halo%20Lakujoo,%20saya%20tertarik%20dengan%20*Paket%202%20Rider*%20(Rp%2050%20Juta).%20Mohon%20info%20lebih%20lanjut." target="_blank" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md text-sm sm:text-base btn-primary">
+                            <i class="fab fa-whatsapp mr-2"></i>Pilih Paket
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 4 Rider (Paling Cepat BEP) -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white text-gray-800 rounded-2xl overflow-hidden transform scale-[1.05] md:scale-105 shadow-2xl relative border-4 border-accent-main z-10">
+                    <div class="absolute top-0 right-0 bg-accent-main text-white text-xs font-bold px-4 py-1 uppercase rounded-bl-xl">Pilihan Terbaik!</div>
+                    <div class="bg-primary-dark p-5 sm:p-6 text-center text-white">
+                        <h3 class="text-xl sm:text-2xl font-bold text-accent-main">Paket 4 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">Paling Cepat BEP & Ekspansi</p>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl sm:text-6xl font-extrabold text-accent-main">Rp 90 Juta</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
+                            <li class="flex items-start"><i class="fas fa-motorcycle text-green-600 mr-3 mt-1"></i> 4 Unit Sepeda Listrik Custom</li>
+                            <li class="flex items-start"><i class="fas fa-tablet-alt text-green-600 mr-3 mt-1"></i> Aplikasi BK-POS (Manajemen Penuh)</li>
+                            <li class="flex items-start"><i class="fas fa-book-open text-green-600 mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
+                            <li class="flex items-start"><i class="fas fa-user-shield text-green-600 mr-3 mt-1"></i> Lisensi Franchise (1 Tahun)</li>
+                            <li class="flex items-start"><i class="fas fa-warehouse text-green-600 mr-3 mt-1"></i> Showcase / Chiller 1 Pintu</li>
+                            <li class="flex items-start"><i class="fas fa-cubes text-green-600 mr-3 mt-1"></i> Bonus 900 Cup Stok Awal</li>
+                        </ul>
+                        <a href="https://wa.me/6282199968492?text=Halo%20Lakujoo,%20saya%20tertarik%20dengan%20*Paket%204%20Rider*%20(Rp%2090%20Juta)%20-%20Pilihan%20Terbaik!%20Mohon%20info%20lebih%20lanjut." target="_blank" class="block w-full py-4 bg-accent-main text-primary-dark text-center rounded-lg font-extrabold hover:bg-cyan-500 shadow-xl text-sm sm:text-base btn-primary">
+                            <i class="fab fa-whatsapp mr-2"></i>Pilih Paket Favorit
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 8 Rider -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white text-gray-800 rounded-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 card-shadow border border-gray-200">
+                    <div class="bg-gray-100 p-5 sm:p-6 text-center">
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-dark">Paket 8 Rider</h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2">Enterprise Pack (Aset Penuh)</p>
+                    </div>
+                    <div class="p-6 sm:p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl sm:text-5xl font-bold text-accent-main">Rp 170 Juta</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm sm:text-base text-left">
+                            <li class="flex items-start"><i class="fas fa-motorcycle text-tan mr-3 mt-1"></i> 8 Unit Sepeda Listrik Custom</li>
+                            <li class="flex items-start"><i class="fas fa-tablet-alt text-tan mr-3 mt-1"></i> Aplikasi BK-POS Lanjutan</li>
+                            <li class="flex items-start"><i class="fas fa-book-open text-tan mr-3 mt-1"></i> SOP & Pelatihan Lengkap</li>
+                            <li class="flex items-start"><i class="fas fa-user-check text-tan mr-3 mt-1"></i> Lisensi Franchise Premium</li>
+                            <li class="flex items-start"><i class="fas fa-warehouse text-tan mr-3 mt-1"></i> Showcase / Chiller 2 Pintu</li>
+                            <li class="flex items-start"><i class="fas fa-temperature-low text-tan mr-3 mt-1"></i> Freezer Penyimpanan 120L</li>
+                            <li class="flex items-start"><i class="fas fa-cubes text-tan mr-3 mt-1"></i> Bonus 1.800 Cup Stok Awal</li>
+                        </ul>
+                        <a href="https://wa.me/6282199968492?text=Halo%20Lakujoo,%20saya%20tertarik%20dengan%20*Paket%208%20Rider*%20(Rp%20170%20Juta)%20-%20Enterprise%20Pack.%20Mohon%20info%20lebih%20lanjut." target="_blank" class="block w-full py-3 bg-primary-dark text-white text-center rounded-lg font-bold hover:bg-gray-700 shadow-md text-sm sm:text-base btn-primary">
+                            <i class="fab fa-whatsapp mr-2"></i>Pilih Paket
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator BEP/Keuntungan -->
+    <section id="kalkulator" class="py-16 sm:py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Kalkulator Estimasi Keuntungan</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+                <p class="text-gray-600 mt-4">Hitung potensi keuntungan bisnis Anda</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Jumlah Rider</label>
+                        <select id="riderCount" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                            <option value="2">2 Rider</option>
+                            <option value="4">4 Rider</option>
+                            <option value="8">8 Rider</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Target Penjualan per Hari (Cup)</label>
+                        <input type="number" id="salesPerDay" value="40" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Harga Jual Rata-rata (Rp)</label>
+                        <input type="number" id="avgPrice" value="10000" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Margin Keuntungan (%)</label>
+                        <input type="number" id="profitMargin" value="50" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                    </div>
+                </div>
+                
+                <button onclick="calculateProfit()" class="w-full bg-accent-main text-white py-4 rounded-lg font-bold hover:bg-cyan-500 transition btn-primary mb-6">
+                    <i class="fas fa-calculator mr-2"></i>Hitung Estimasi
+                </button>
+                
+                <div id="calculatorResult" class="hidden calculator-result text-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Hasil Estimasi</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <p class="text-sm opacity-90">Keuntungan Per Bulan</p>
+                            <p class="text-3xl font-bold" id="monthlyProfit">Rp 0</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm opacity-90">Estimasi BEP</p>
+                            <p class="text-3xl font-bold" id="bepMonths">0 Bulan</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-center mt-4 opacity-80">*Estimasi berdasarkan perhitungan ideal. Hasil aktual dapat bervariasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-16 sm:py-24 section-dark">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-accent-main mb-4">Testimoni Mitra</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <!-- Testimonial Slide 1 -->
+                <div class="testimonial-slide active" data-aos="fade-up">
+                    <div class="bg-[#28384b] p-8 rounded-2xl text-center">
+                        <div class="mb-6">
+                            <i class="fas fa-quote-left text-accent-main text-4xl"></i>
+                        </div>
+                        <p class="text-gray-300 text-lg mb-6 italic">"Sistem franchise Lakujoo sangat membantu! Dari suplai bahan baku sampai teknologi manajemennya lengkap. Dalam 3 bulan operasional sudah mulai balik modal."</p>
+                        <div class="flex items-center justify-center">
+                            <div class="w-16 h-16 bg-accent-main rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">A</div>
+                            <div class="text-left">
+                                <p class="text-white font-bold">Ahmad Rizki</p>
+                                <p class="text-gray-400 text-sm">Mitra Lakujoo - Jakarta Timur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="w-3 h-3 rounded-full bg-accent-main"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-24 px-6 section-light">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Pertanyaan yang Sering Ditanyakan</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+            </div>
+            
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Apa saja yang didapat dalam paket franchise?</span>
+                        <i id="faq-icon-1" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-1" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Setiap paket mencakup sepeda listrik custom, aplikasi BK-POS, SOP & pelatihan lengkap, lisensi franchise, dan stok awal cup. Paket yang lebih besar juga mendapat showcase/chiller dan freezer.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Berapa lama estimasi balik modal (BEP)?</span>
+                        <i id="faq-icon-2" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-2" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Dengan operasional optimal, estimasi BEP berkisar 6-12 bulan tergantung paket dan lokasi operasional. Paket 4 Rider biasanya paling cepat mencapai BEP.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Apakah harus beli bahan baku dari pusat?</span>
+                        <i id="faq-icon-3" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-3" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Ya, untuk menjaga konsistensi kualitas dan rasa khas Lakujoo, semua bahan baku utama wajib dibeli dari pusat. Sistem ini juga memastikan suplai terjamin dan stok selalu tersedia.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(4)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Apakah ada pelatihan untuk mitra baru?</span>
+                        <i id="faq-icon-4" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-4" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Tentu! Kami menyediakan pelatihan lengkap mulai dari operasional gerobak, cara membuat minuman, manajemen rider, hingga penggunaan aplikasi BK-POS. Mitra juga mendapat SOP tertulis.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(5)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Bagaimana sistem re-order bahan baku?</span>
+                        <i id="faq-icon-5" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-5" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Untuk area Jakarta & Depok, bahan dikirim dalam bentuk liquid siap saji. Untuk luar kota, dikirim dalam bentuk konsentrat untuk menjaga keawetan. Detail katalog dan MOQ dapat diunduh di section Supply Chain.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(6)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Apakah bisa membuka di luar Jakarta?</span>
+                        <i id="faq-icon-6" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-6" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Sangat bisa! Kami sudah melayani pengiriman ke luar kota dengan skema khusus. Sistem franchise Lakujoo dirancang untuk dapat beroperasi di berbagai kota di Indonesia.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(7)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="font-bold text-lg text-primary-dark">Bagaimana dukungan setelah pembelian franchise?</span>
+                        <i id="faq-icon-7" class="fas fa-chevron-down faq-icon text-accent-main"></i>
+                    </button>
+                    <div id="faq-answer-7" class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Kami memberikan support berkelanjutan melalui tim dedicated, konsultasi bisnis, update menu dan teknologi, serta komunitas mitra untuk sharing best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dukungan Supply Chain -->
+    <section id="reorder" class="py-16 sm:py-24 section-dark relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+                <div class="md:w-1/2 w-full" data-aos="fade-right">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-accent-main">Dukungan Supply Chain Premium</h2>
+                    <p class="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-lg">
+                        Kami menjamin kemudahan operasional dan konsistensi rasa. Bahan baku dikirim langsung dari Pusat (Jakarta Timur) dengan skema yang disesuaikan lokasi untuk menjaga kualitas terbaik.
+                    </p>
+                    <ul class="space-y-4 sm:space-y-6 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-main mt-1 mr-4 text-lg sm:text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-base sm:text-xl text-white">Standar Kualitas Tertinggi</h4>
+                                <p class="text-xs sm:text-sm text-gray-400">Semua bahan baku telah terstandarisasi. Mitra cukup mencampur, tidak perlu meracik dari awal.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shipping-fast text-accent-main mt-1 mr-4 text-lg sm:text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-base sm:text-xl text-white">Logistik Efisien</h4>
+                                <p class="text-xs sm:text-sm text-gray-400">Skema pengiriman disesuaikan dengan lokasi untuk menjamin kesegaran dan umur simpan produk.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:w-1/2 w-full mt-6 md:mt-0" data-aos="fade-left">
+                    <div class="bg-cream text-gray-900 p-6 sm:p-8 rounded-xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-3 h-full bg-accent-main rounded-l-xl"></div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary-dark pl-4">Skema Pengiriman Bahan Baku</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md text-sm">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-base sm:text-lg text-primary-dark">Area Jakarta & Depok</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">Dikirim berupa Bahan Jadi (Liquid). Mitra menerima barang dalam kondisi siap tuang/saji.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-primary-dark text-white p-3 rounded-full mr-4 mt-1 shadow-md text-sm">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-base sm:text-lg text-primary-dark">Luar Kota (Jauh)</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">Dikirim berupa Bahan Racikan (Konsentrat) terpisah (dry/powder) untuk menjaga keawetan. Mitra mencampur sendiri di lokasi.</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 sm:mt-8 pt-4 border-t border-gray-200">
+                                <p class="text-xs text-gray-500 mb-3 text-center">Unduh detail harga re-order, MOQ, dan katalog lengkap:</p>
+                                <a href="katalog-reorder-panduan-logistik.pdf" download class="flex items-center justify-center w-full py-3 bg-accent-main text-primary-dark rounded-lg font-extrabold hover:bg-cyan-500 transition duration-300 shadow-lg text-sm sm:text-base btn-primary">
+                                    <i class="fas fa-file-pdf mr-2"></i> Download Panduan Logistik (PDF)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Kontak/Pendaftaran -->
+    <section id="kontak" class="py-16 sm:py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Daftar Mitra Sekarang</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+                <p class="text-gray-600 mt-4">Isi form di bawah untuk mendaftar atau hubungi kami langsung</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Form -->
+                <div data-aos="fade-right" class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap*</label>
+                            <input type="text" id="name" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Email*</label>
+                            <input type="email" id="email" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Nomor WhatsApp*</label>
+                            <input type="tel" id="phone" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none" placeholder="08xx xxxx xxxx">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Kota*</label>
+                            <input type="text" id="city" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Paket Pilihan*</label>
+                            <select id="package" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none">
+                                <option value="">Pilih Paket</option>
+                                <option value="Paket 2 Rider">Paket 2 Rider - Rp 50 Juta</option>
+                                <option value="Paket 4 Rider">Paket 4 Rider - Rp 90 Juta (Rekomendasi)</option>
+                                <option value="Paket 8 Rider">Paket 8 Rider - Rp 170 Juta</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Pesan (Opsional)</label>
+                            <textarea id="message" rows="3" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-accent-main focus:outline-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent-main text-white py-4 rounded-lg font-bold hover:bg-cyan-500 transition btn-primary">
+                            <i class="fas fa-paper-plane mr-2"></i>Kirim Pendaftaran
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-left" class="space-y-6">
+                    <div class="bg-primary-dark text-white p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent-main rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">WhatsApp</h4>
+                                <a href="https://wa.me/6282199968492" target="_blank" class="text-accent-main hover:underline">+62 821 9996 8492</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-dark text-white p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent-main rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <a href="mailto:admin@lakujoo.com" class="text-accent-main hover:underline">admin@lakujoo.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-dark text-white p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent-main rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Instagram</h4>
+                                <a href="https://instagram.com/lakujooofficial" target="_blank" class="text-accent-main hover:underline">@lakujooofficial</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 p-6 rounded-xl">
+                        <h4 class="font-bold text-primary-dark mb-3">Jam Operasional</h4>
+                        <p class="text-gray-600 text-sm">Senin - Jumat: 09.00 - 17.00 WIB</p>
+                        <p class="text-gray-600 text-sm">Sabtu: 09.00 - 14.00 WIB</p>
+                        <p class="text-gray-600 text-sm">Minggu & Tanggal Merah: Tutup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peta Lokasi -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">Lokasi Kantor Pusat</h2>
+                <div class="w-24 h-1 bg-accent-main mx-auto"></div>
+                <p class="text-gray-600 mt-4">Jakarta Timur, Indonesia</p>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-4 rounded-2xl shadow-lg">
+                <!-- Google Maps Embed Placeholder -->
+                <div class="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt text-6xl text-accent-main mb-4"></i>
+                        <p class="text-gray-600">Kantor Pusat Lakujoo</p>
+                        <p class="text-gray-500 text-sm">Jakarta Timur, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white py-12 border-t border-accent-main">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <img src="https://customer-assets.emergentagent.com/job_0e3189dc-4b59-475d-85fa-4ea58e11d1b3/artifacts/xqv449ud_LOGO%20LAKUJOO%20PUTIH.jpg" alt="Lakujoo Logo" class="h-16 object-contain mb-4">
+                    <p class="text-gray-400 text-sm mb-4">Bisnis Kopi Keliling Modern dengan Sistem Franchise Terintegrasi. Mudah, Menguntungkan, dan Terukur.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/lakujooofficial" target="_blank" class="w-10 h-10 bg-accent-main rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/6282199968492" target="_blank" class="w-10 h-10 bg-accent-main rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-accent-main">Menu Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-accent-main transition">Beranda</a></li>
+                        <li><a href="#keunggulan" class="text-gray-400 hover:text-accent-main transition">Keunggulan</a></li>
+                        <li><a href="#paket" class="text-gray-400 hover:text-accent-main transition">Paket</a></li>
+                        <li><a href="#kalkulator" class="text-gray-400 hover:text-accent-main transition">Kalkulator</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-accent-main transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-accent-main">Kontak</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-phone mr-2 text-accent-main"></i>+62 821 9996 8492</li>
+                        <li><i class="fas fa-envelope mr-2 text-accent-main"></i>admin@lakujoo.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-accent-main"></i>Jakarta Timur</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-500 text-sm">© 2024 Kopi Lakujoo by Kopi Adem 86. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6282199968492?text=Halo%20Lakujoo,%20saya%20ingin%20bertanya%20tentang%20franchise" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Counter Animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+        }
+
+        // Trigger counter animation when in viewport
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.textContent === '0') {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Calculator Function
+        function calculateProfit() {
+            const riderCount = parseInt(document.getElementById('riderCount').value);
+            const salesPerDay = parseInt(document.getElementById('salesPerDay').value);
+            const avgPrice = parseInt(document.getElementById('avgPrice').value);
+            const profitMargin = parseInt(document.getElementById('profitMargin').value) / 100;
+            
+            // Calculate monthly profit
+            const dailyRevenue = salesPerDay * avgPrice * riderCount;
+            const dailyProfit = dailyRevenue * profitMargin;
+            const monthlyProfit = dailyProfit * 26; // 26 working days
+            
+            // Calculate BEP based on package
+            let investmentCost;
+            if (riderCount === 2) {
+                investmentCost = 50000000;
+            } else if (riderCount === 4) {
+                investmentCost = 90000000;
+            } else {
+                investmentCost = 170000000;
+            }
+            
+            const bepMonths = Math.ceil(investmentCost / monthlyProfit);
+            
+            // Display results
+            document.getElementById('monthlyProfit').textContent = `Rp ${monthlyProfit.toLocaleString()}`;
+            document.getElementById('bepMonths').textContent = `${bepMonths} Bulan`;
+            document.getElementById('calculatorResult').classList.remove('hidden');
+        }
+
+        // Form Submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const packageChoice = document.getElementById('package').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const waMessage = `*Pendaftaran Mitra Lakujoo*%0A%0A` +
+                `Nama: ${name}%0A` +
+                `Email: ${email}%0A` +
+                `WhatsApp: ${phone}%0A` +
+                `Kota: ${city}%0A` +
+                `Paket Pilihan: ${packageChoice}%0A` +
+                `Pesan: ${message || '-'}`;
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/6282199968492?text=${waMessage}`, '_blank');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Show success message
+            alert('Terima kasih! Anda akan diarahkan ke WhatsApp untuk melanjutkan pendaftaran.');
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
